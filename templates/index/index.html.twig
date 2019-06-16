@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% if results %}
+<h2>Musicas<h2>
+  <div class="container" style="text-align: center;">
+    <div class="row">
+      {% for item in results %}
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="{{item.image}}" alt="Imagem de capa do card">
+          <div class="card-body">
+            <h5 class="card-title">{{item.artist}}</h5>
+            <p class="card-text">{{item.name}}</p>
+          </div>
+        </div>
+      {%  endfor %}
+    </div>
+  </div>
+{% endif %}
+
+{% endblock %}
